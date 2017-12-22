@@ -2,3 +2,12 @@
 
 <div><span>Id: </span>{{ currentUser.id}}</div>
 <div><label>Email: </label>{{ currentUser.email}}</div>
+
+<div>Edit Name: 
+  <input [(ngModel)] = "currentUser.name" placeholder = "Bhai naam daalo">
+</div>
+
+<h2>All Users</h2>
+<ul>
+  <li *ngFor = "let user of userList" (click) = "onSelect(user)">{{user.name}}</li>
+</ul>

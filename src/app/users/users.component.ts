@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User} from '../user';
+import { User } from '../user';
+import { USERS } from '../mock-users';
 
 @Component({
   selector: 'app-users',
@@ -9,13 +10,21 @@ import { User} from '../user';
 export class UsersComponent implements OnInit {
 
   currentUser: User = {
-    id: 1,
-    email: 'shivankchopra017@gmail.com',
-    name: 'Shivank Chopra'
-  }
+      id: 0,
+      name: '',
+      email: ''
+  };
+  userList: User[] //= USERS;
+
   constructor() { }
 
   ngOnInit() {
+    this.userList = USERS;
+  }
+
+  // handle click on users
+  onSelect(user){
+    this.currentUser = user;
   }
 
 }
